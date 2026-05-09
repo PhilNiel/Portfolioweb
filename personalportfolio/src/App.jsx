@@ -311,7 +311,7 @@ function Nav() {
             <FaGithub className="w-[18px] h-[18px]" />
           </a>
           <a
-            href="#"
+            href="www.linkedin.com/in/phillip-løvenhardt-vincent-nielsen-877248244"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -883,7 +883,7 @@ function Footer() {
               <FaGithub className="w-4 h-4" />
             </a>
             <a
-              href="#"
+              href="www.linkedin.com/in/phillip-løvenhardt-vincent-nielsen-877248244"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
