@@ -311,7 +311,7 @@ function Nav() {
             <FaGithub className="w-[18px] h-[18px]" />
           </a>
           <a
-            href="www.linkedin.com/in/phillip-løvenhardt-vincent-nielsen-877248244"
+            href="https://www.linkedin.com/in/phillip-l-v-n/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -344,9 +344,10 @@ function Hero() {
           className="text-lg md:text-xl text-gray-300 max-w-xl mx-auto leading-relaxed mb-10 fade-up"
           style={{ animationDelay: '0.4s' }}
         >
-          Software engineer working on{' '}
-          <span className="text-blue-300">distributed systems</span> and{' '}
-          <span className="text-blue-300">data infrastructure</span>. Master's in software engineering.
+          Software engineer with a focus on{' '}
+          <span className="text-blue-300">distributed systems</span>,{' '}
+          <span className="text-blue-300">scalable infrastructure</span>, and{' '}
+          <span className="text-blue-300">data intensive applications</span>. Master's in Software Engineering.
         </p>
         <div className="flex flex-wrap justify-center gap-3 fade-up" style={{ animationDelay: '0.55s' }}>
           <a href="#projects" className="pill-btn pill-btn-primary">
@@ -381,21 +382,22 @@ function About() {
         <div className="grid md:grid-cols-5 gap-12 items-start">
           <div className="md:col-span-3 space-y-5 text-[16px] md:text-[17px] leading-[1.75] text-gray-200">
             <p>
-              I'm a recently graduated software engineer based in Hammel, Denmark. I hold both a
-              Bachelor's and Master's degree in Software Engineering, and I'm drawn to the parts of
-              the field where systems get complicated — distributed architecture, streaming data,
-              and the quiet plumbing that keeps everything consistent.
+              I'm a recently graduated Software Engineer based in Hammel. I hold both a Bachelor's and a Master's degree 
+              in Software Engineering, with a strong interest in building and understanding complex systems. 
+              I'm especially drawn to areas like distributed architectures, scalable backend systems, 
+              cloud infrastructure, and big data environments, 
+              where design decisions are critical to performance, reliability, and maintainability.
+  
             </p>
             <p>
-              My Master's thesis explored transformation lineage in Apache Spark — a system that
-              captures how data moves through pipelines and surfaces it as a graph for auditability.
-              Alongside it, I've worked on microservice architectures, IoT systems, and data-platform
-              work in industry.
+              My Master's thesis explored transformation lineage in Apache Spark. During the thesis we developed a system that
+              captures how data moves through pipelines and surfaces it as a directed acyclic graphs for auditability.
+              My Bachelor's project and side projects have involved working with microservice architectures, IoT systems, 
+              and data platforms.
             </p>
             <p>
-              I like work that sits between disciplines: backend engineering that has to think about
-              data, data systems that have to think about UX, and infrastructure that engineers
-              actually want to use.
+              I enjoy working with infrastructure and developer tooling, building systems that make data accessible, maintainable 
+              and intuitive to work with for both developers and users.
             </p>
           </div>
 
@@ -403,8 +405,8 @@ function About() {
             <p className="section-eyebrow mb-5">Quick facts</p>
             <ul className="space-y-4 text-sm">
               <FactRow label="Location" value="Hammel, Denmark" />
-              <FactRow label="Education" value="MSc Software Engineering" />
-              <FactRow label="Focus" value="Distributed systems · Data eng" />
+              <FactRow label="Education" value="MSc in Software Engineering" />
+              <FactRow label="Focus" value="Distributed systems · Data engineering" />
               <FactRow label="Status" value="Open to opportunities" highlight />
             </ul>
           </aside>
@@ -582,8 +584,7 @@ function Projects() {
             Things I've <em className="accent-gradient not-italic font-semibold">built</em>
           </h2>
           <p className="text-gray-400 mt-5 max-w-xl mx-auto leading-relaxed">
-            A mix of academic research, university group projects, and industry work — most are
-            collaborative.
+            A mix of academic research, university group projects, and hobby projects.
           </p>
         </div>
 
@@ -725,8 +726,7 @@ function Tech() {
             What I <em className="accent-gradient not-italic font-semibold">work with</em>
           </h2>
           <p className="text-gray-400 mt-5 max-w-xl mx-auto leading-relaxed">
-            Tools and frameworks I've used in projects, coursework, and industry — grouped by where
-            they live in a stack.
+            Tools and frameworks I have worked with in projects, coursework, and industry.
           </p>
         </div>
 
@@ -796,7 +796,7 @@ function Contact() {
               icon={FaLinkedin}
               label="LinkedIn"
               value="Connect with me"
-              href="www.linkedin.com/in/phillip-løvenhardt-vincent-nielsen-877248244"
+              href="https://www.linkedin.com/in/phillip-l-v-n/"
             />
           </div>
 
@@ -883,7 +883,7 @@ function Footer() {
               <FaGithub className="w-4 h-4" />
             </a>
             <a
-              href="www.linkedin.com/in/phillip-løvenhardt-vincent-nielsen-877248244"
+              href="https://www.linkedin.com/in/phillip-l-v-n/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
