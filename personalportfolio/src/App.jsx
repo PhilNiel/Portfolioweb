@@ -5,7 +5,6 @@ import {
   ArrowUpRight,
   Star,
   GitFork,
-  Send,
   MapPin,
 } from 'lucide-react';
 
@@ -438,10 +437,10 @@ function Projects() {
       role: "Master's Thesis · with Joachim Baumann",
       tagline: 'Lineage tracking for Apache Spark workflows',
       description:
-        "Captures transformation metadata from Spark workflows, persists it as a directed acyclic graph in Neo4j, and surfaces lineage in a web interface — supporting auditability, dependency analysis, and data invalidation.",
+        "Captures transformation metadata from Spark workflows, persists it as a directed acyclic graph in Neo4j, and enables tracking data lineage in a web interface supporting auditability, dependency analysis, and data invalidation.",
       contribution:
         'Co-developed the Spark listener, graph schema, and the web frontend that visualizes lineage relationships.',
-      stack: ['Java', 'Apache Spark', 'Neo4j', 'JavaScript', 'Docker'],
+      stack: ['Java', 'Apache Spark', 'Neo4j', 'JavaScript', 'Docker', 'Google Cloud'],
       stars: 1,
       forks: 1,
       year: '2025',
@@ -509,7 +508,7 @@ function Projects() {
       role: 'University Project · Team',
       tagline: 'Drone-simulated wildlife data offload',
       description:
-        'A wildlife monitoring system: a Raspberry Pi camera captures images locally, and a "drone" — simulated by a Linux PC — searches for visible access points, connects, and offloads data automatically.',
+        'A wildlife monitoring system: a Raspberry Pi camera captures images locally, and a drone (simulated by a Linux PC), searches for visible access points, connects, and offloads data automatically.',
       contribution:
         'Set up the imaginary drone with bash scripts and the MQTT publisher; built the access-point discovery and handoff logic.',
       stack: ['Bash', 'Python', 'MQTT', 'Linux', 'Raspberry Pi'],
@@ -616,13 +615,8 @@ function FeaturedCard({ p }) {
         <h3 className="font-serif text-3xl md:text-4xl font-medium tracking-tight mb-1">
           {p.name}
         </h3>
-        <p className="font-mono text-xs text-gray-500 mb-4">{p.role}</p>
         <p className="text-blue-300 text-sm md:text-base mb-3">{p.tagline}</p>
         <p className="text-gray-300 text-sm leading-relaxed mb-4">{p.description}</p>
-        <p className="text-gray-400 text-xs leading-relaxed mb-5 italic">
-          <span className="not-italic font-mono text-[10px] tracking-wider uppercase text-gray-600 mr-2">My role —</span>
-          {p.contribution}
-        </p>
         <div className="flex flex-wrap gap-2 mb-6">
           {p.stack.map(s => <span key={s} className="tag-chip">{s}</span>)}
         </div>
@@ -655,13 +649,8 @@ function ProjectCard({ p }) {
           <Stats stars={p.stars} forks={p.forks} />
         </div>
         <h3 className="font-serif text-2xl font-medium tracking-tight mb-1">{p.name}</h3>
-        <p className="font-mono text-[11px] text-gray-500 mb-3">{p.role}</p>
         <p className="text-blue-300 text-sm mb-2">{p.tagline}</p>
         <p className="text-gray-300 text-sm leading-relaxed mb-3">{p.description}</p>
-        <p className="text-gray-400 text-xs leading-relaxed mb-4 italic">
-          <span className="not-italic font-mono text-[10px] tracking-wider uppercase text-gray-600 mr-2">My role —</span>
-          {p.contribution}
-        </p>
         <div className="flex flex-wrap gap-1.5 mb-5">
           {p.stack.map(s => <span key={s} className="tag-chip">{s}</span>)}
         </div>
@@ -749,90 +738,40 @@ function Tech() {
 
 /* ===================== CONTACT ===================== */
 function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.message) return;
-    const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
-    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
-    window.location.href = `mailto:phillipvincent@hotmail.dk?subject=${subject}&body=${body}`;
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    setForm({ name: '', email: '', message: '' });
-  };
-
   return (
     <section id="contact" className="relative py-32 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <div className="text-center mb-14">
           <p className="section-eyebrow mb-3">Contact</p>
           <h2 className="font-serif text-5xl md:text-6xl font-medium tracking-tight">
             Let's <em className="accent-gradient not-italic font-semibold">talk</em>
           </h2>
           <p className="text-gray-400 mt-5 max-w-xl mx-auto leading-relaxed">
-            Open to junior roles in distributed systems, data engineering, and backend development.
-            Drop a message and I'll get back to you.
+            Open to software roles in distributed systems, data engineering, and backend development.
+            Reach out through any of the channels below.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-8">
-          <div className="md:col-span-2 space-y-4">
-            <ContactInfo
-              icon={Mail}
-              label="Email"
-              value="phillipvincent@hotmail.dk"
-              href="mailto:phillipvincent@hotmail.dk"
-            />
-            <ContactInfo icon={MapPin} label="Location" value="Hammel, Denmark" />
-            <ContactInfo
-              icon={FaGithub}
-              label="GitHub"
-              value="PhilNiel"
-              href="https://github.com/PhilNiel"
-            />
-            <ContactInfo
-              icon={FaLinkedin}
-              label="LinkedIn"
-              value="Connect with me"
-              href="https://www.linkedin.com/in/phillip-l-v-n/"
-            />
-          </div>
-
-          <form onSubmit={handleSubmit} className="md:col-span-3 surface-card rounded-xl p-7 space-y-4">
-            <div className="grid sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Your name"
-                value={form.name}
-                onChange={e => setForm({ ...form, name: e.target.value })}
-                className="input-field"
-              />
-              <input
-                type="email"
-                placeholder="Email address"
-                value={form.email}
-                onChange={e => setForm({ ...form, email: e.target.value })}
-                className="input-field"
-              />
-            </div>
-            <textarea
-              placeholder="Your message"
-              rows={5}
-              value={form.message}
-              onChange={e => setForm({ ...form, message: e.target.value })}
-              className="input-field resize-none"
-            />
-            <button
-              type="submit"
-              disabled={!form.name || !form.email || !form.message}
-              className="pill-btn pill-btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <Send className="w-4 h-4" />
-              {sent ? 'Mail client opened' : 'Send message'}
-            </button>
-          </form>
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <ContactInfo
+            icon={Mail}
+            label="Email"
+            value="Send a mail"
+            href="mailto:phillipvincent@hotmail.dk"
+          />
+          <ContactInfo
+            icon={FaLinkedin}
+            label="LinkedIn"
+            value="Connect with me"
+            href="https://www.linkedin.com/in/phillip-l-v-n/"
+          />
+          <ContactInfo
+            icon={FaGithub}
+            label="GitHub"
+            value="PhilNiel"
+            href="https://github.com/PhilNiel"
+          />
+          <ContactInfo icon={MapPin} label="Location" value="Hammel, Denmark" />
         </div>
       </div>
     </section>
